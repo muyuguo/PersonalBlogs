@@ -1,0 +1,38 @@
+#home {
+    width: 100%;
+    height: 150vh;
+    min-height: 1300px;
+    margin-top: 10px;
+    padding-top: 5vh;
+    background-color: #eee;
+}
+
+.home-main {
+    width: 60vw;
+    min-width: 549px;
+    height: 120vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    .log {
+        width: 40vw;
+        min-width: 358px;
+        height: 120vh;
+        min-height: 1170px;
+        padding-top: 30px;
+        padding-left: 1vw;
+        padding-right: 0vw;
+        background-color: #f7f7f7;
+        float: left;
+    }
+    .complex {
+        width: 18vw;
+        min-width: 162px;
+        height: 120vh;
+        min-height: 1170px;
+        padding-top: 30px;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        background-color: #f7f7f7;
+        float: right;
+    }
+}

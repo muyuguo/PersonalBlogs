@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="example"></div>
+        <script async defer type="text/babel">
+            class MouseTracker extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.handleMouseMove = this.handleMouseMove.bind(this);
+                    this.overX = this.overX.bind(this);
+                    this.state = { x: 0, y: 0 };
+                }
+
+                handleMouseMove(event) {
+                    this.setState({
+                        x: event.clientX,
+                        y: event.clientY
+                    });
+                    if(this.state.x == 900) {
+                        this.overX();
+                    }
+                }
+
+
+                overX() {
+                    alert("超出边界了！");
+                    console.log(this.state.x)
+                }
+
+                render() {
+                    return (
+                        
+                        <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+                                <h1>移动鼠标!</h1>
+                                <p>当前的鼠标位置是 ({this.state.x}, {this.state.y})</p>
+                        </div>
+                        
+                    )
+                }
+            }
+            ReactDOM.render(
+                <MouseTracker />,
+                document.getElementById('example')
+            )
+        </script>
+    </body>
+</html>

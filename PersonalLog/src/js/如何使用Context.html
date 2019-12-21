@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="example"></div>
+    <script async defer type="text/babel">
+        class App extends React.Component {
+                constructor(props) {
+                    super(props);
+                }
+
+                render() {
+                    return (
+                        <Toolbar theme="dark" />
+                    )
+                }
+            }
+
+            function Toolbar(props) {
+                // Toolbar 组件接受一个额外的“theme”属性，然后传递给 ThemedButton 组件。
+                // 如果应用中每一个单独的按钮都需要知道 theme 的值，这会是件很麻烦的事，
+                // 因为必须将这个值层层传递所有组件。
+                return (
+                    <div>
+                        <ThemedButton theme="{props.theme}" />    
+                    </div>
+                )
+            }
+
+            class ThemedButton extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.getTheme = this.getTheme.bind(this);
+                    
+                }
+
+                getTheme() {
+                    console.log("now theme", this.props.theme);
+                }
+
+                render() {
+                    return (
+                        <button theme="{this.props.theme}" onClick={this.getTheme}>点我</button>
+                    )
+                }
+            }
+            ReactDOM.render(
+                <App />,
+                document.getElementById('example')
+            )
+        </script>
+</body>
+
+</html>

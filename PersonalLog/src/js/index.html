@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+	class CustomTextInput extends React.Component {
+	constructor(props) {
+	super(props);
+	//创建一个ref来存储textInput的DOM元素
+	 this.textInput = React.createRef();
+	 this.focusTextInput = this.focusTextInput.bind(this);
+}
+	focusTextInput() {
+	// 直接使用原生 API 使 text 输入框获得焦点
+    // 注意：我们通过 "current" 来访问 DOM 节点
+	this.textInput.current.focus();
+	console.log("已focusDOM：",this.textInput.current);
+}
+	render() {
+	 // 告诉 React 我们想把 <input> ref 关联到
+	// 构造器里创建的 `textInput` 上
+	return(
+    <div>
+		<input type="text" ref={this.textInput} />
+		 <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput} />
+	</div>
+	)
+}
+}
+ReactDOM.render(
+	<CustomTextInput/>,
+	document.getElementById('example')
+)
+</script>
+</body>
+</html>
