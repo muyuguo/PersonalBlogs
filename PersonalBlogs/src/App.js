@@ -12,7 +12,8 @@ import Users from '../src/components/Users';
       //this.mouseAnime = this.mouseAnime.bind(this);
     }
     componentDidMount() {
-      import('./js/mouseSpecial.js');
+      let execute = import('./js/mouseSpecial.js');
+      return execute;
     }
    render() {
     return (

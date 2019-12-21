@@ -1,13 +1,13 @@
 import anime from 'animejs/lib/anime.es.js';
 //添加按钮点击事件句柄
 var event = document.querySelector('body').addEventListener('click', function (e) {
-    var addClick = document.createElement('div');
+    var addClick = document.createElement('div');   //新建一个div元素
     //addClick.style.backgroundColor = 'red';
     addClick.style.width = '220px';
     addClick.style.height = '100px';
     console.log(addClick);
     addClick.style.zIndex = '1000';
-    addClick.innerHTML = '❤٩(๑❛ᴗ❛๑)۶❤';
+    addClick.innerHTML = '❤٩(๑❛ᴗ❛๑)۶❤'; //设置弹出内容
     addClick.style.fontSize = "18px";
     var clickDiv = document.getElementById("App").appendChild(addClick); //给body节点添加第一个子节点
 
@@ -31,14 +31,18 @@ var event = document.querySelector('body').addEventListener('click', function (e
         addClick.style.top = leaderY + "px";
     }
 
+    //值得顶的时间后执行事件
     setTimeout(function () {
-        addClick.style.top =  leaderY - 90 + "px"; 
+       
+        setTimeout(function () {
+        addClick.style.top =  leaderY - 120 + "px"; 
         addClick.style.opacity = "0";
+        }, 200)
         addClick.style.transition = " top, 1.5s, opacity, 1.5s";
         setTimeout(function () {
             document.getElementById("App").removeChild(addClick);
-        }, 1500)
-    }, 10)
+        }, 1500);
+    }, 10);
     
 })
 
