@@ -5,7 +5,7 @@ var event = document.querySelector('body').addEventListener('click', function (e
     //addClick.style.backgroundColor = 'red';
     addClick.style.width = '220px';
     addClick.style.height = '100px';
-    console.log(addClick);
+    //console.log(addClick);
     addClick.style.zIndex = '1000';
     addClick.innerHTML = '❤٩(๑❛ᴗ❛๑)۶❤'; //设置弹出内容
     addClick.style.fontSize = "18px";

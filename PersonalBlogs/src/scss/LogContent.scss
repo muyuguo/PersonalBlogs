@@ -1,0 +1,57 @@
+#log-content {
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+.log-content-main {
+    width: 60vw;
+    min-width: 549px;
+    height: 120vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 10px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: #EEEEEE;
+    position: relative;
+    //左侧目录区
+    .left-menu {
+        float: left;
+        width: 9vw;
+        height: 100%;
+        position: fixed;
+        top: 10rem;
+        ul {
+            padding-left: 20px;
+            li {
+                text-align: left;
+                font-weight: 600;
+                color: #000;
+                font-size: 1rem;
+            }
+        }
+    }
+        /*
+链接:http://caibaojian.com/rem-and-px.html
+来源:http://caibaojian.com
+
+1rem等于html根元素设定的font-size的px值，假如我们在css里面设定下面的css。
+
+html{font-size:14px}
+那么后面的CSS里面的rem值则是以这个14来换算，例如设定一个div宽度为3rem,高度为2.5rem.则它换算成px为width:42px.height:35px，同理，假如一个设计稿为宽度42px,高度为35px，则换成成rem，则是42/14=3rem，35/14=2.5rem。
+
+如果css里面没有设定html的font-size，则默认浏览器以1rem=16px来换算。*/
+    //中间内容区
+    .middle-content {
+        width: 36.5vw;
+        height: 90%;
+        padding: 0 2rem;
+        background-color: #FFFFFF;
+        margin-left: 1.4375rem;
+        margin-right: 1.4375rem;
+        position: absolute;
+        left: 9vw;
+        border-radius: 2px;
+    }
+}

@@ -2,7 +2,7 @@
  * @Author: 谷锦涛 
  * @Date: 2019-10-29 12:25:13 
  * @Last Modified by: 谷锦涛
- * @Last Modified time: 2019-11-10 18:48:35
+ * @Last Modified time: 2019-12-21 17:46:52
  */
 
 import React from 'react';
@@ -34,7 +34,7 @@ class LogList extends React.Component {
                       </div>
                       <div className="right-content-description">
                           <div className="top-title">
-                              <p><Link to="/about">这是一个测试样例</Link></p>
+                              <p><Link to="/logContent">这是一个测试样例</Link></p>
                           </div>
                           <div className="bottom-complex">
                               <div className="time">

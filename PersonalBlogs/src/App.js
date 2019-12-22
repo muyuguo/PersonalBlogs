@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from '../src/components/Home';
 import About from '../src/components/About';
 import Users from '../src/components/Users';
-
+import LogContent from '../src/components/LogDetail/LogContent';
 
  class App extends React.Component {
    constructor(prop) {
@@ -51,7 +51,9 @@ import Users from '../src/components/Users';
             <Route exact path="/">
               <Home />
             </Route>
-            
+            <Route exact path="/logContent">
+              <LogContent />
+            </Route>
           </Switch>
         </div>
       </Router>
